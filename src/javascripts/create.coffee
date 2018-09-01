@@ -1,3 +1,5 @@
+GameObject = require './game_objects/game_object.coffee'
+
 module.exports = ->
   @setTile = (x, y, object) ->
     @grid[y][x] = object
@@ -24,3 +26,6 @@ module.exports = ->
       else
         col[x] = 0
     @grid.push col
+  
+  @add.object GameObject, 2, 2, 'key'
+  @add.object GameObject, 3, 2, 'car'
