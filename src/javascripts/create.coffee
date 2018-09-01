@@ -1,4 +1,5 @@
 GameObject = require './game_objects/game_object.coffee'
+Hero = require './game_objects/hero.coffee'
 
 module.exports = ->
   @setTile = (x, y, object) ->
@@ -29,3 +30,5 @@ module.exports = ->
   
   @add.object GameObject, 2, 2, 'key'
   @add.object GameObject, 3, 2, 'car'
+  
+  @add.object Hero, 3, 3, 'hero'
