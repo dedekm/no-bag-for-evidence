@@ -8,6 +8,13 @@ module.exports = ->
     
   @getTile = (x, y) ->
     @grid[y][x]
+  
+  @directionToXY = (dir, x = 0, y = 0) ->
+    switch dir
+      when 'up' then { x: x, y: y - 1 }
+      when 'down' then { x: x, y: y + 1 }
+      when 'left' then { x: x - 1, y: y }
+      when 'right' then { x: x + 1, y: y }
     
   @tileSize = 32
   @tileSizeHalf = @tileSize / 2

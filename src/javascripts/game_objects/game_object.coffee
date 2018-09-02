@@ -8,23 +8,16 @@ class GameObject extends Phaser.GameObjects.Image
   moveTo: (direction) ->
     return false unless @movable
     
-    switch direction
-      when 'up' then y = -1
-      when 'down' then y = 1
-      when 'left' then x = -1
-      when 'right' then x = 1
-    
-    targetPositionX = @tileX + (x || 0)
-    targetPositionY = @tileY + (y || 0)
-    targetTile = @scene.getTile(targetPositionX, targetPositionY)
+    targetPosition = @scene.directionToXY(direction, @tileX, @tileY)
+    targetTile = @scene.getTile(targetPosition.x, targetPosition.y)
     
     return false if targetTile == 1
     
     if targetTile == 0
-      @setPosition(targetPositionX, targetPositionY)
+      @setPosition(targetPosition.x, targetPosition.y)
       true
     else if @combineWith(targetTile) || targetTile.moveTo(direction)
-      @setPosition(targetPositionX, targetPositionY)
+      @setPosition(targetPosition.x, targetPosition.y)
       true
     else
       false
