@@ -3,6 +3,7 @@ GameObject = require './game_object.coffee'
 class Hero extends GameObject
   constructor: (scene, x, y, key, frame) ->
     super scene, x, y, key, frame
+    @combinable = false
     
     hero = @
     @scene.input.keyboard.on 'keydown', (event) ->

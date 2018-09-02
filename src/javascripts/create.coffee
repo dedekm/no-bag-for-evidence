@@ -1,5 +1,6 @@
 GameObject = require './game_objects/game_object.coffee'
 Hero = require './game_objects/hero.coffee'
+CombinationsPlugin = require './combinations.coffee'
 
 module.exports = ->
   @setTile = (x, y, object) ->
@@ -10,6 +11,7 @@ module.exports = ->
     
   @tileSize = 32
   @tileSizeHalf = @tileSize / 2
+  @combinations = new CombinationsPlugin @
   
   map = @make.tilemap(
     key: 'map'
@@ -30,5 +32,7 @@ module.exports = ->
   
   @add.object GameObject, 2, 2, 'key'
   @add.object GameObject, 3, 2, 'car'
+  @combinations.add 'key', 'car', [ 'destroy', 1],
+                                  [ 'create', 2, 'magnifying_glass', 1, 0]
   
   @add.object Hero, 3, 3, 'hero'
