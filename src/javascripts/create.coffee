@@ -36,3 +36,5 @@ module.exports = ->
                                   [ 'create', 2, 'magnifying_glass', 1, 0]
   
   @add.object Hero, 3, 3, 'hero'
+  @input.keyboard.on 'keydown', (event) ->
+    @scene.scene.restart() if event.key == 'r'
