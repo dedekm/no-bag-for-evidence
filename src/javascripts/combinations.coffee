@@ -26,7 +26,7 @@ class CombinationsPlugin
 
         temp = item1
         item1 = item2
-        item2 = item1
+        item2 = temp
         success = true
     
     # result: not valid combination
