@@ -3,4 +3,5 @@ module.exports = ->
     @load.image(image, "/images/#{image}.png")
   
   @load.image('tiles', '/images/tiles.png')
-  @load.tilemapCSV('map', '/tilemaps/map.csv')
+  @load.tilemapCSV('tiles', '/tilemaps/map_tiles.csv')
+  @load.tilemapCSV('objects', '/tilemaps/map_objects.csv')
