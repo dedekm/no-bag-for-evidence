@@ -22,8 +22,5 @@ module.exports = ->
   
   buildMap(@)
   
-  @combinations.add 'key', 'car', [ 'destroy', 1],
-                                  [ 'create', 2, 'magnifying_glass', 1, 0]
-  
   @input.keyboard.on 'keydown', (event) ->
     @scene.scene.restart() if event.key == 'r'
