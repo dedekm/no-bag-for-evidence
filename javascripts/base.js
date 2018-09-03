@@ -23,7 +23,7 @@ var GameObject,StaticObject;GameObject=require("./game_object.coffee"),StaticObj
 var GameObjectPlugin;GameObjectPlugin=class extends Phaser.Plugins.BasePlugin{constructor(e){super(e),e.registerGameObject("object",this.createObject)}createObject(e,t,s,a,c){var r;return r=new e(this.scene,t,s,a,c),this.displayList.add(r),r._makeAMove()}},module.exports=GameObjectPlugin;
 
 },{}],9:[function(require,module,exports){
-var IMAGES;IMAGES=["hero","car","key","magnifying_glass","gun","body","hair","bin","newspapers","smoker","cigarette","door"],module.exports=function(){var e,a,i;for(e=0,i=IMAGES.length;e<i;e++)a=IMAGES[e],this.load.image(a,`images/${a}.png`,{frameWidth:32,frameHeight:32});return this.load.image("tiles","/images/tiles.png"),this.load.tilemapCSV("tiles","/tilemaps/map_tiles.csv"),this.load.tilemapCSV("objects","/tilemaps/map_objects.csv")};
+var IMAGES;IMAGES=["hero","car","key","magnifying_glass","gun","body","hair","bin","newspapers","smoker","cigarette","door"],module.exports=function(){var e,a,i;for(e=0,i=IMAGES.length;e<i;e++)a=IMAGES[e],this.load.image(a,`images/${a}.png`);return this.load.image("tiles","images/tiles.png"),this.load.tilemapCSV("tiles","tilemaps/map_tiles.csv"),this.load.tilemapCSV("objects","tilemaps/map_objects.csv")};
 
 },{}],10:[function(require,module,exports){
 module.exports=function(){};
