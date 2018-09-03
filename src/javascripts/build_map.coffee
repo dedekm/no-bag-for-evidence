@@ -41,7 +41,8 @@ module.exports = (scene) ->
   
   objects = scene.make.tilemap(key: 'objects')
   
-  scene.grid = []
+  scene.presentGrid = []
+  scene.futureGrid = []
   for y in [0...map.height]
     col = []
     for x in [0...map.width]
@@ -50,7 +51,9 @@ module.exports = (scene) ->
         col[x] = 1
       else
         col[x] = 0
-    scene.grid.push col
+        
+    scene.presentGrid.push col
+    scene.futureGrid.push []
   
   for y in [0...map.height]
     for x in [0...map.width]

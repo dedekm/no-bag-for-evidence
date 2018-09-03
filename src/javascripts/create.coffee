@@ -4,10 +4,16 @@ buildMap = require './build_map.coffee'
 
 module.exports = ->
   @setTile = (x, y, object) ->
-    @grid[y][x] = object
+    @presentGrid[y][x] = object
     
   @getTile = (x, y) ->
-    @grid[y][x]
+    @presentGrid[y][x]
+    
+  @setFutureTile = (x, y, object) ->
+    @futureGrid[y][x] = object
+    
+  @getFutureTile = (x, y) ->
+    @futureGrid[y][x]
   
   @directionToXY = (dir, x = 0, y = 0) ->
     switch dir

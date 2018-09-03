@@ -39,8 +39,20 @@ class CombinationsPlugin
     return true
   
   create: (item, opts) ->
-    targetPosition = @scene.directionToXY opts.direction, item.tileX, item.tileY
-    @scene.add.object(GameObject, targetPosition.x, targetPosition.y, opts.key)
+    targetPosition = @scene.directionToXY(opts.direction, item.tilePosition.x, item.tilePosition.y)
+    targetTile = @scene.getTile(targetPosition.x, targetPosition.y)
+    
+    if targetTile == 1
+      false
+    else
+      object = new GameObject(@scene, item.tilePosition.x, item.tilePosition.y, opts.key)
+      
+      if object.moveTo(opts.direction)
+        @scene.children.add(object)
+        true
+      else
+        object.destroy()
+        false
   
   destroy: (item) ->
     item.destroy()
