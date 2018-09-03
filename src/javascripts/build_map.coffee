@@ -15,6 +15,23 @@ GAME_OBJECTS =
   3: {
     key: 'hero',
     customClass: 'Hero'
+  },
+  4: {
+    key: 'body'
+  },
+  5: {
+    key: 'bin'
+  },
+  6: {
+    key: 'newspapers'
+  },
+  7: {
+    key: 'smoker',
+    static: true
+  },
+  8: {
+    key: 'door',
+    static: true
   }
 
 
