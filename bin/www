@@ -5,7 +5,7 @@
  */
 require('coffeescript/register')
 var app = require('../app.coffee');
-var debug = require('debug')('phaser-base:server');
+var debug = require('debug')('no-bag-for-evidence:server');
 var http = require('http');
 
 /**

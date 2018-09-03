@@ -7,8 +7,11 @@ update = require './update.coffee'
 
 config =
   type: Phaser.AUTO
-  width: 800
-  height: 600
+  title: 'No Bag For Evidence'
+  width: 320
+  height: 240
+  pixelArt: true
+  zoom: 2
   plugins:
     global: [
         { key: 'GameObjectPlugin', plugin: GameObjectPlugin, start: true }
